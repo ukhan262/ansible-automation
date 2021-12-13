@@ -4,8 +4,20 @@
 ## ansible -m copy -a "src=~/.gitconfig dest=master.config" localhost
 
 - name: CopyFile
+  gather_facts: false
   hosts: localhost
   tasks:
   - copy: 
       src: "~/.gitconfig"
       dest: "master.config"
+
+
+# ansible -m homebrew -a "name=jq state=latest" localhost
+# ansible -m homebrew -a "name=bat state=latest" localhost
+- name: InstallHomebrewPackages
+  hosts: localhost
+  tasks:
+  - homebrew: name=bat state=latest
+  - homebrew:
+      name: jq
+      state: latest

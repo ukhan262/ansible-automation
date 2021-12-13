@@ -5,6 +5,7 @@
 localhost (node where to deploy)
 
 ##
+##
 ## this is to install jq and bat using ansible on the localhost
 ##
 ansible -m homebrew -a "name=jq state=latest" localhost
