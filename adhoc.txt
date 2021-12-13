@@ -1,0 +1,19 @@
+
+-m modulename
+-a arguments
+--check what-if
+localhost (node where to deploy)
+
+##
+## this is to install jq and bat using ansible on the localhost
+##
+ansible -m homebrew -a "name=jq state=latest" localhost
+ansible -m homebrew -a "name=bat state=latest" localhost
+
+
+
+##
+## this is to copy a file from one directory to another
+##
+
+ansible -m copy -a "src=~/.gitconfig dest=master.config" localhost
