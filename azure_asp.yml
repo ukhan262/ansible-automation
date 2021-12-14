@@ -1,0 +1,9 @@
+---
+
+- name: update sku of existing windows app service plan
+  azure_rm_appserviceplan:
+    resource_group: app-settings-poc
+    name: uktappsettingspocplan
+    location: westus2
+    sku: S2
+
